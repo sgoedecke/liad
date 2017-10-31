@@ -1,0 +1,27 @@
+{
+  "name": "liad",
+  "version": "1.0.0",
+  "description": "Find DOM elements asynchronously",
+  "main": "liad.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgoedecke/liad.git"
+  },
+  "keywords": [
+    "dom",
+    "element",
+    "queryselector",
+    "asynchronous",
+    "async",
+    "promise"
+  ],
+  "author": "sgoedecke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgoedecke/liad/issues"
+  },
+  "homepage": "https://github.com/sgoedecke/liad#readme"
+}
