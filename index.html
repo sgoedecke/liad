@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <script src='liad.js'></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <h1>Liad.js demo</h1>
+    <div class='bio'>
+      Liad is a wrapper for document.querySelector that returns a promise instead of an element. If you're looking for an element that might not exist yet, call <code>liad.fetchElement(query, waitTime)</code> to do something to that element asynchronously.
+      <br><br>
+      By default, Liad will give up after five seconds. Try searching for an id below, then creating a div with that id before five seconds pass!
+    </div>
+
+    <form>
+      <input class='newDivId' placeholder='Type id here...' type='text' />
+      <button class='addDiv'>Add Div</button>
+    </form>
+
+    <form>
+      <input class='findDivId' placeholder='Type id here...' type='text' />
+      <button class='findDiv'>Find Div</button>
+    </form>
+
+    <div class='divs'></div>
+
+    <div class='error'></div>
+
+    <script>
+      var divs = document.querySelector('.divs')
+
+      document.querySelector('.addDiv').addEventListener('click', (e) => {
+        e.preventDefault()
+        var newId = document.querySelector('.newDivId').value
+        var newDiv = document.createElement("div")
+        newDiv.id = newId
+        newDiv.innerHTML = newId
+        divs.appendChild(newDiv)
+        document.querySelector('.newDivId').value = ''
+      })
+
+      document.querySelector('.findDiv').addEventListener('click', (e) => {
+        e.preventDefault()
+        var id = document.querySelector('.findDivId').value
+        liad.fetchElement('#' + id).then((e) => {
+          e.className += 'found'
+        }).catch((e) => {
+          document.querySelector('.error').innerHTML = e
+        })
+        document.querySelector('.findDivId').value = ''
+      })
+
+    </script>
+  </body>
+</html>
