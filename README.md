@@ -8,8 +8,8 @@ To fetch a div with id 'target' and set its content to "Got you!":
 
 ```
 liad.fetchElement('#target').then((e) => {
-    e.innerHTML = 'Got you!'
-  }).catch((err) => {
-    console.error(err)
-  })
+  e.innerHTML = 'Got you!'
+}).catch((err) => {
+  console.error(err)
+})
 ```
