@@ -19,3 +19,7 @@ liad.fetchElement('#target').then((e) => {
   console.error(err)
 })
 ```
+
+## Contribution
+
+Liad works but is still in a very early stage. I'm particularly keen on improving error handling and adding unit tests, but I'm happy to consider new features as well. Issues and PRs are welcome.
